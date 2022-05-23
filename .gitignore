@@ -1,0 +1,11 @@
+node_modules
+design
+dist
+public
+*.zip
+*.sketch
+*.xd
+*.fig
+.env
+.DS_Store
+.prettierignore
