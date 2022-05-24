@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.s4 {
+  display: grid;
+  place-items: center;
+
+  .wrapper {
+    margin: 4rem;
+
+    @include mq(small) {
+      margin-inline: 1rem;
+    }
+  }
+
+  .wrapper > * + * {
+    margin-top: 1rem;
+  }
+}
+
+.s4__headline {
+  color: var(--clr-black);
+  letter-spacing: 6px;
+  word-spacing: .5rem;
+  text-transform: uppercase;
+}
+
+.s4__subtitle {
+  color: hsl(0, 0%, 50%);
+  font-size: 1rem;
+}

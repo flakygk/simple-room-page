@@ -1,0 +1,21 @@
+.container {
+  --max-width: 100ch;
+  --padding: 2rem;
+  width: min(
+    100% - var(--padding),
+    var(--max-width)
+  );
+  margin-inline: auto;
+}
+
+.container[data-type='narrow'] {
+  --max-width: 80ch;
+}
+
+.container[data-type='wide'] {
+  --max-width: 120ch;
+}
+
+.container[data-type='vast'] {
+  --max-width: 150ch;
+}

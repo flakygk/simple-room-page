@@ -1,0 +1,62 @@
+@use 'sass:map';
+@use '../abstracts/variables' as var;
+@use '../abstracts/mq' as *;
+
+.s2 {
+  display: grid;
+  place-items: center;
+
+  .wrapper {
+    margin: 6rem;
+
+    @include mq(small) {
+      margin-inline: 1rem;
+    }
+  }
+
+  .wrapper > * + * {
+    margin-top: 1.125rem;
+  }
+}
+
+.s2__headline {
+  font-size: 2.875rem;
+}
+
+.s2__subtitle {
+  font-size: 1rem;
+  color: mix(
+    map.get(var.$colors, 'black'),
+    map.get(var.$colors, 'white')
+  );
+}
+
+.s2__btn {
+  text-decoration: none;
+  display: block;
+  margin-top: 3rem !important;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  letter-spacing: .875rem;
+  word-spacing: .75rem;
+  color: map.get(var.$colors, 'black');
+  width: max-content;
+  transition: color 180ms ease;
+  $color: mix(
+    map.get(var.$colors, 'black'),
+    map.get(var.$colors, 'white')
+  );
+
+  &::after {
+    content: '->';
+  }
+
+  &:hover, &:focus {
+    color: $color;
+  }
+
+  &:focus {
+    outline: 2px solid $color;
+    outline-offset: 4px;
+  }
+}

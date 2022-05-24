@@ -1,0 +1,118 @@
+@use '../abstracts' as *;
+
+.s1 {
+  background-image:
+    url(../images/desktop-image-hero-1.jpg)
+  ;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  position: relative;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--clr-white);
+    display: inline-block;
+  }
+}
+
+.s1__navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 3.5rem 4.5rem;
+
+  .logo {
+    margin-right: 3.5rem;
+
+    img {
+      height: 1.125rem;
+    }
+
+    &:focus {
+      outline: 2px solid var(--clr-white);
+      outline-offset: 6px;
+    }
+  }
+
+  @include mq(large) {
+    justify-content: center;
+
+    .logo {
+      margin: 0;
+    }
+  }
+}
+
+.s1__links-container {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.125rem;
+
+  @include mq(large) {
+    display: none;
+  }
+}
+
+.s1__link {
+  transition: color 180ms ease;
+
+  &:hover, &:focus {
+    color: var(--clr-accent);
+  }
+
+  &:focus {
+    outline: 2px solid var(--clr-accent);
+    outline-offset: 4px;
+  }
+}
+
+.toggler {
+  --width: 10vw;
+  position: absolute;
+  bottom: 0;
+  right: calc(
+    -1 * var(--width)
+  );
+  width: var(--width);
+  height: calc(
+    var(--width) / 2
+  );
+  background: black;
+  display: flex;
+
+  @include mq('extra-large') {
+    right: 0;
+    --width: 10rem;
+  }
+
+  @include mq(large) {
+    --width: 8rem;
+  }
+}
+
+.prev, .next {
+  cursor: pointer;
+  flex-basis: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 2rem;
+  transition: background 180ms ease;
+
+  &:hover, &:focus {
+    background: hsl(0, 0%, 33%);
+  }
+
+  &:focus {
+    outline: 2px solid black;
+    outline-offset: -2px;
+  }
+}

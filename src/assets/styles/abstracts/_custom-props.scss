@@ -1,0 +1,8 @@
+// @use 'sass:map';
+@use 'variables' as var;
+
+:root {
+  @each $name, $clr in var.$colors {
+    --clr-#{$name}: #{$clr};
+  }
+}

@@ -1,0 +1,16 @@
+@use '../abstracts/mq' as *;
+
+.s5 {
+  background-image: url(
+    ../images/image-about-light.jpg
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include mq('extra-large') {
+    background-image: url(
+      ../images/desktop-image-hero-3.jpg
+    );
+  }
+}
